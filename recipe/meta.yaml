@@ -1,5 +1,5 @@
 {% set name = "jupyter_ascending" %}
-{% set version = "0.1.23" %}
+{% set version = "0.1.25" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyter_ascending-{{ version }}.tar.gz
-  sha256: 9d759cdb35dbe5ce1db6c06907daa1102b357cd922dcf8d8ca866b91bff60754
+  sha256: 411c00765b10574f8b384ca8bf13fe445b27fede0379298333dcbe84657d70f0
 
 build:
   number: 0
