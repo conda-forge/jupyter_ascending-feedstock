@@ -7,18 +7,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyter_ascending-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/jupyter_ascending-{{ version }}.tar.gz
   sha256: 9d759cdb35dbe5ce1db6c06907daa1102b357cd922dcf8d8ca866b91bff60754
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - poetry
   run:
     - attrs >=19.0.0
@@ -28,7 +28,7 @@ requirements:
     - jsonrpcserver >=4.1.2,<5.0.0
     - jupytext >=1.3.4,<2.0.0
     - loguru >=0.4.1
-    - python >=3.6
+    - python >={{ python_min }}
     - toml >=0.10.0
 
 test:
@@ -39,6 +39,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/jupyter-ascending/
